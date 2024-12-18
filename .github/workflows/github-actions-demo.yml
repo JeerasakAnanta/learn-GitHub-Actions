@@ -16,4 +16,10 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo " Hello World  Game is Running"  
+      - run: echo " Hello World  Game is Running"
+      
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event.
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
