@@ -1,4 +1,4 @@
-name: boudlt docker image 
+name: Build Docker Image
 
 on:
   push:
@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: List os docker image 
+      - name: List Docker Images
         run: docker images
 
-
-    
