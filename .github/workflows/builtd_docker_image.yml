@@ -1,4 +1,4 @@
-name: ci
+name: boudlt docker image 
 
 on:
   push:
