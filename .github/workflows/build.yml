@@ -1,0 +1,32 @@
+name: CI/CD Pipeline # ชื่อ workflow
+
+on: # trigger ที่จะทำงาน
+  push: # กรณี push
+    branches: [main]
+  pull_request: # กรณี pull request
+    branches: [main]
+
+jobs: # งานต่าง ๆ
+  build: # ชื่อ job
+    runs-on: ubuntu-latest # OS ที่ใช้รัน
+
+    steps: # ขั้นตอนใน job
+      - name: Checkout code
+        uses: actions/checkout@v3 # ดึงโค้ดจาก repo
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Build docker image
+        run: docker ps -a
+
+      - name: Say Hello
+        run: echo "Hello, World!"
